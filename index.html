@@ -1,0 +1,51 @@
+<!DOCTYUPE html>
+<html>
+<head>
+    <meta charset="UTF-8"> </meta>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="index.css"/>
+
+    <!-- JS -->
+    <script type="application/javascript" src="index.js"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"> </script>
+    <title> Disney Movies </title>
+
+</head>
+
+<body>
+    <div>
+        <h1>
+            Yay! Disney Movies and Stuff!
+        </h1>
+    </div>
+
+    <div id="query" class="section">
+        <input placeholder="Enter movie title..."> </input> 
+        <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            Genre
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="#"> Princess </a></li>
+            <li><a class="dropdown-item" href="#"> Animal </a></li>
+            <li><a class="dropdown-item" href="#"> Other </a></li>
+        </ul>
+        <button class="btn btn-primary" type="button" onclick="query()">
+            Search 
+        </button>
+    </div>
+
+    <br>
+
+    <div id="output" class="section">
+        <ul>
+            nothing
+        </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
