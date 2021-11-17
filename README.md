@@ -17,6 +17,13 @@ python -m venv venv # Create a virtual environment
 pip install -r requirements.txt # Install the dependencies in the venv
 ```
 
+Once the requirements are installed, the database will have to be created from
+the provided CSV file. To do this, run the `initdb.py` script:
+
+```bash
+python initdb.py
+```
+
 ## Running the App
 
 On the command line with the `venv` active, run:
