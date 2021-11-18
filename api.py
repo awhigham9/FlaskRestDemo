@@ -34,7 +34,7 @@ class Movies(Resource):
 
     def abort_on_exception(self, error : str):
         '''Abort with 500 Interal Server Error'''
-        abort(500, message=f'An unknown error occurred: {error}', )
+        abort(500, message=f'An unknown error occurred: {error}')
 
     def abort_if_does_not_exist(self, title : str):
         '''Abort with 404 if a movie with title cannot be found'''
