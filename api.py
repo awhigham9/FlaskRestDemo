@@ -67,7 +67,9 @@ class Movies(Resource):
                 cleanForm[col] = currObj[col] # Use previous values
             else:
                 value = request.form[col]
-                if type(value) is not self.database_columns[col]:
+                try:
+                    value = self.database_columns[col](value) # Attempt to cast to type
+                except:
                     abort(400, message='Invalid form data')
                 cleanForm[col] = value
         cleanForm['title'] = title
@@ -108,8 +110,10 @@ class Movies(Resource):
                 cleanForm[col] = self.database_columns[col]() # Default of type
             else:
                 value = request.form[col]
-                if type(value) is not self.database_columns[col]:
-                    abort(400, message="Invalid form data") # Wrong type
+                try:
+                    value = self.database_columns[col](value) # Attempt to cast to type
+                except:
+                    abort(400, message='Invalid form data')
                 cleanForm[col] = value
         cleanForm['title'] = title
 
