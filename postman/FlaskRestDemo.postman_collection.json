@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "2b02d41d-54ce-4981-b3cd-ffa3763f384d",
+		"name": "FlaskRestDemo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET Pinocchio",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/movies/Pinocchio",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"movies",
+						"Pinocchio"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Pinocchio",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "total_gross",
+							"value": "notanumber",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/movies/Pinocchio",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"movies",
+						"Pinocchio"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Empire Strikes Back",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "genre",
+							"value": "Sci-fi",
+							"type": "text"
+						},
+						{
+							"key": "mpaa_rating",
+							"value": "PG13",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/movies/Empire Strikes Back",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"movies",
+						"Empire Strikes Back"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Empire Strikes Back",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/movies/Empire Strikes Back",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"movies",
+						"Empire Strikes Back"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Empire Strikes Back",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/movies/Empire Strikes Back",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"movies",
+						"Empire Strikes Back"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
