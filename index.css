@@ -3,7 +3,17 @@ button {
     margin: auto;
     position: relative;
     text-align: center;
-    width: 120px;
+}
+
+input {
+    width: 50%;
+}
+
+ul {
+    color: blueviolet;
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0; 
 }
 
 h1 {
@@ -24,11 +34,11 @@ body {
 
 /* classes */
 .section {
-    display: inline-block;
+    /* display: inline-block; */
     align-content: center;
     margin: 1%;
     position: relative;
-    left: 20%;
+    /* left: 20%; */
     width: 100%;
 }
 

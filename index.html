@@ -1,5 +1,5 @@
 <!DOCTYUPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8"> </meta>
 
@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="index.css"/>
 
     <!-- JS -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"> </script>
     <script type="application/javascript" src="index.js"> </script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"> </script>
     <title> Disney Movies </title>
@@ -21,27 +22,21 @@
         </h1>
     </div>
 
-    <div id="query" class="section">
-        <input placeholder="Enter movie title..."> </input> 
-        <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-            Genre
+    <div id="hello" class="section">
+        <button class="btn btn-light" type="button" onclick="hello()">
+            Hello
         </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item" href="#"> Princess </a></li>
-            <li><a class="dropdown-item" href="#"> Animal </a></li>
-            <li><a class="dropdown-item" href="#"> Other </a></li>
-        </ul>
+    </div>
+
+    <div id="query" class="section">
+        <input id = "title" placeholder="Enter movie title"> </input> 
         <button class="btn btn-primary" type="button" onclick="query()">
             Search 
         </button>
     </div>
 
-    <br>
-
     <div id="output" class="section">
         <ul>
-            nothing
         </ul>
     </div>
 
