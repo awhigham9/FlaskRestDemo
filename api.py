@@ -35,16 +35,12 @@ class Movies(Resource):
         '''Abort with 500 Interal Server Error'''
         return abort(500, message=f'An unknown error occurred: {error}', )
 
-    def abort_on_does_not_exist(self, title : str):
-        '''Abort with 404 and a message when title cannot be found'''
-        return abort(404, f'Move of title "{title}" does not exist')
-
     def abort_if_does_not_exist(self, title : str):
         '''Abort a request if a movie with title cannot be found'''
         cur = self.get_db_cursor().execute('SELECT * FROM movies WHERE title=?', [title])
         exists = bool(cur.fetchone())
         if not exists:
-            self.abort_on_does_not_exist(title)
+            abort(404, message=f'Move of title "{title}" does not exist')
 
     ### API Endpoints ###
 
@@ -134,6 +130,18 @@ class Movies(Resource):
         conn.commit()
 
         return self.get(title), 201 # 201 Created
+
+    def delete(self,title):
+        '''HTTP DELETE Request'''
+        self.abort_if_does_not_exist(title)
+        conn = sqlite3.connect(self.db_path)
+        cur = conn.cursor()
+        try:
+            cur.execute('DELETE FROM movies WHERE title=:title', {'title' : title})
+        except sqlite3.Error as e:
+            self.abort_on_exception(str(e))
+        conn.commit()
+        return 200
 
 api.add_resource(HelloWorld, '/hello')
 api.add_resource(Movies, '/movies/<string:title>')
