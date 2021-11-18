@@ -69,7 +69,10 @@ class Movies(Resource):
             if col not in request.form:
                 cleanForm[col] = currObj[col] # Use previous values
             else:
-                cleanForm[col] = request.form[col]
+                value = request.form[col]
+                if type(value) is not self.database_columns[col]:
+                    abort(400, message='Invalid form data')
+                cleanForm[col] = value
         cleanForm['title'] = title
         # Query the database
         conn = sqlite3.connect(self.db_path)
