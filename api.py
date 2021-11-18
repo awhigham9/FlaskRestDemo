@@ -11,6 +11,7 @@ class HelloWorld(Resource):
         return {'message': 'Hello, World!'}
 
 class Movies(Resource):
+    '''Movies API class'''
 
     db_path = 'movies.sqlite3'
 
@@ -36,7 +37,7 @@ class Movies(Resource):
         return abort(500, message=f'An unknown error occurred: {error}', )
 
     def abort_if_does_not_exist(self, title : str):
-        '''Abort a request if a movie with title cannot be found'''
+        '''Abort with 404 if a movie with title cannot be found'''
         cur = self.get_db_cursor().execute('SELECT * FROM movies WHERE title=?', [title])
         exists = bool(cur.fetchone())
         if not exists:
