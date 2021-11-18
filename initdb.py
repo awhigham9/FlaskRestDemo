@@ -18,7 +18,7 @@ def main():
     conn.execute('''
         CREATE TABLE movies
         (
-            title TEXT,
+            title TEXT PRIMARY KEY ON CONFLICT IGNORE,
             release_date TEXT,
             genre TEXT,
             mpaa_rating TEXT,
